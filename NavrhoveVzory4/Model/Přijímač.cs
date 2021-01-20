@@ -34,14 +34,14 @@ namespace NavrhoveVzory4.Model
 
         }
 
-        public Přijímač přenastavVysílač()
+        public Přijímač přenastavVysílač(int idVysílače)
         {
-
+             return new Přijímač(idVysílače, ZvolenýTypVysílání, ZvolenýTypVysílání);
         }
         
-        public Přijímač přenastavPřijímanýSignál()
+        public Přijímač přenastavTypPřijímanéhoSignálu(Typ_vysílání novýTypZvolenéhoVysílání)
         {
-
+            return new Přijímač(Zpráva.Id, Typ_vysílání.LIBOVOLNÝ_TEXT, novýTypZvolenéhoVysílání);
         }
 
     }
