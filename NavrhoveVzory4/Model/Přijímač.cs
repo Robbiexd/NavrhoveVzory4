@@ -1,4 +1,4 @@
-﻿using NavrhoveVzory4.Model.enums;
+﻿using NavrhoveVzory4.Model.výčty;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -42,6 +42,11 @@ namespace NavrhoveVzory4.Model
         public Přijímač přenastavTypPřijímanéhoSignálu(Typ_vysílání novýTypZvolenéhoVysílání)
         {
             return new Přijímač(Zpráva.Id, Typ_vysílání.LIBOVOLNÝ_TEXT, novýTypZvolenéhoVysílání);
+        }
+        
+        public string NaŘetězec()
+        {
+            return Zpráva.Id.ToString() + " " + Zpráva.TypVysílání + " " + ZvolenýTypVysílání;
         }
 
     }

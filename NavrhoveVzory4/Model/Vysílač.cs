@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using NavrhoveVzory4.Model.enums;
+using NavrhoveVzory4.Model.výčty;
 
 namespace NavrhoveVzory4.Model
 {
@@ -15,6 +15,11 @@ namespace NavrhoveVzory4.Model
         {
             Id = id;
             TypVysílání = typ;
+        }
+
+        public string NaŘetězec()
+        {
+            return Id.ToString() + " " + TypVysílání;
         }
     }
 }

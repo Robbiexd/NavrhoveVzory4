@@ -1,4 +1,4 @@
-﻿using NavrhoveVzory4.Model.enums;
+﻿using NavrhoveVzory4.Model.výčty;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -54,12 +54,13 @@ namespace NavrhoveVzory4.Model
 
         public string změňTypVysílání(Typ_vysílání typ_Vysílání, int indexPřijímače)
         {
-            if (registrovanéPřijímače.Count - 1 < indexPřijímače && indexPřijímače >= 0)
+            if (indexPřijímače < registrovanéPřijímače.Count && indexPřijímače >= 0)
             {
                 registrovanéPřijímače[indexPřijímače] = registrovanéPřijímače[indexPřijímače].přenastavTypPřijímanéhoSignálu(typ_Vysílání);
                 return "TYP VYSÍLÁNÍ ÚSPĚŠNĚ PŘENASTAVEN!";
             }
-                return "TENTO PŘIJÍMAČ NEEXISTUJE!!!";
+
+            return "TENTO PŘIJÍMAČ NEEXISTUJE!!!";
         }
         
         
@@ -76,15 +77,26 @@ namespace NavrhoveVzory4.Model
             
         }
 
-        public string odeberPřijímač(int indexPřijímače)
+        public string odeberPřijímačDleIndexu(int indexPřijímače)
         {
-            if(registrovanéPřijímače.Count -1 < indexPřijímače && indexPřijímače >= 0)
+            if(indexPřijímače < registrovanéPřijímače.Count && indexPřijímače >= 0)
             {
                 registrovanéPřijímače.RemoveAt(indexPřijímače);
                 return "PŘIJÍMAČ BYL ÚSPĚŠNĚ ODEBRÁN ZE SEZNAMU REGISTROVANÝCH PŘIJÍMAČŮ!";
             }
 
             return "TENTO PŘIJÍMAČ NEEXISTUJE!!!";
+        }
+
+        public string NaŘetězec()
+        {
+            string výstup = "";
+            foreach(Přijímač výpis in registrovanéPřijímače)
+            {
+                výstup += (výpis.NaŘetězec() + "\n");
+            }
+
+            return výstup;
         }
     }
 }

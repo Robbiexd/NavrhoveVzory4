@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NavrhoveVzory4.Model.enums
+namespace NavrhoveVzory4.Model.výčty
 {
     public enum Typ_vysílání
     {
