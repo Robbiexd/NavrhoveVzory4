@@ -13,6 +13,7 @@ namespace NavrhoveVzory4
         static void Main(string[] args)
         {
             Směrovač smeřovač = new Směrovač();
+            const string LINE = "----------------------------------------------------------------------------------------------";
 
             List <Vysílač> vysílače = new List<Vysílač>();
             vysílače.Add(new Vysílač(1, Typ_vysílání.FILMY));
@@ -20,22 +21,22 @@ namespace NavrhoveVzory4
 
             Console.WriteLine(smeřovač.registrujNovýPřijímač(1, Typ_vysílání.LIBOVOLNÝ_TEXT, Typ_vysílání.FILMY));
             Console.WriteLine(smeřovač.NaŘetězec());
-            Console.WriteLine("----------------------------------------------------------------------------------------------");
+            Console.WriteLine(LINE);
 
             Console.WriteLine(smeřovač.přepniVysílání(vysílače[1], 0));
-            Console.WriteLine("----------------------------------------------------------------------------------------------");
+            Console.WriteLine(LINE);
 
             Console.WriteLine(smeřovač.změňTypVysílání(Typ_vysílání.SPORT, 0));
             Console.WriteLine(smeřovač.NaŘetězec());
-            Console.WriteLine("----------------------------------------------------------------------------------------------");
+            Console.WriteLine(LINE);
 
             Console.WriteLine(smeřovač.přepniVysílání(vysílače[1], 0));
             Console.WriteLine(smeřovač.NaŘetězec());
-            Console.WriteLine("----------------------------------------------------------------------------------------------");
+            Console.WriteLine(LINE);
 
             Console.WriteLine(smeřovač.odeberPřijímačDleIndexu(0));
             Console.WriteLine(smeřovač.NaŘetězec());
-            Console.WriteLine("----------------------------------------------------------------------------------------------");
+            Console.WriteLine(LINE);
 
             Console.ReadKey();
         }
