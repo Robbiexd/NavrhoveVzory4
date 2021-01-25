@@ -1,1 +1,1 @@
-navrhove vzory 4
+# navrhove vzory 4
